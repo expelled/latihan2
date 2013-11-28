@@ -1,0 +1,42 @@
+@(segitigaForm: Form[Segitiga])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@title = {
+    Luas Segitiga 
+}
+
+@main(title, nav = "triangle") {
+    
+    @helper.form(action=routes.Triangles.submit, 'id -> "form") {
+        
+        <fieldset>
+            <legend>Detail triangle</legend>
+            
+            @inputText(
+                segitigaForm("height"), 
+                '_label -> "height", 
+                '_help -> "Enter a valid height.",
+                '_error -> segitigaForm.globalError
+            )
+			@inputText(
+                segitigaForm("width"), 
+                '_label -> "width", 
+                '_help -> "Enter a valid width.",
+                '_error -> segitigaForm.globalError
+            )
+            
+            
+            
+        </fieldset>
+                
+        
+        <div class="actions">
+            <input type="submit" class="btn primary" value="Entry">
+            <a href="@routes.Application.index" class="btn">Cancel</a>
+        </div>
+        
+    }
+    
+}

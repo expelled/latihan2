@@ -1,0 +1,48 @@
+@(segitigaForm: Form[Segitiga])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@title = {
+    Keliling Segitiga 
+}
+
+@main(title, nav = "triangle") {
+    
+    @helper.form(action=routes.Triangles.hitungKeliling, 'id -> "form") {
+        
+        <fieldset>
+            <legend>Detail triangle</legend>
+            
+            @inputText(
+                segitigaForm("height"), 
+                '_label -> "sisi pertama", 
+                '_help -> "Enter a valid sisi pertama.",
+                '_error -> segitigaForm.globalError
+            )
+			@inputText(
+                segitigaForm("width"), 
+                '_label -> "sisi kedua", 
+                '_help -> "Enter a valid sisi kedua.",
+                '_error -> segitigaForm.globalError
+            )
+			@inputText(
+                segitigaForm("sisi3"), 
+                '_label -> "sisi ketiga", 
+                '_help -> "Enter a valid sisi ketiga.",
+                '_error -> segitigaForm.globalError
+            )
+            
+            
+            
+        </fieldset>
+                
+        
+        <div class="actions">
+            <input type="submit" class="btn primary" value="Entry">
+            <a href="@routes.Application.index" class="btn">Cancel</a>
+        </div>
+        
+    }
+    
+}

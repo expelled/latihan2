@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Signup
+GET     /phonebook                     controllers.Phonebooks.blank()
+POST    /phonebook                     controllers.Phonebooks.submit()
+
+# Triangle
+GET     /triangle                   	controllers.Triangles.home()
+GET     /luassegitiga           	    controllers.Triangles.blank()
+GET     /kelilingsegitiga   	        controllers.Triangles.blank2()
+POST    /luassegitiga   	            controllers.Triangles.submit()
+POST    /kelilingsegitiga    	        controllers.Triangles.hitungKeliling()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

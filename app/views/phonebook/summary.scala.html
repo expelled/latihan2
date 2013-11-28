@@ -1,0 +1,17 @@
+@(data: Contact) 
+
+@main(Html("Phonebook created!"), nav = "phonebook") {
+    
+    <h2>@data.name </h2>
+    <br>
+	<p>	
+		Nomor: @data.telepon <br>
+		Email: @data.email<br>
+		Address: @data.address<br>
+	</p>
+	
+	<p class="buttons">
+        <a href="@routes.Application.index">Back to the form</a>
+    </p>
+    
+}

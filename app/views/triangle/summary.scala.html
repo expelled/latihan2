@@ -1,0 +1,17 @@
+@(data: Segitiga, luas:Double) 
+
+@main(Html("Thank You"), nav = "triangle") {
+    
+    <h2>the result </h2>
+    <br>
+	<p>	
+		Width	: @data.width cm <br>
+		Height	: @data.height cm<br>
+		Luas	: @luas cm2<br>
+	</p>
+	
+	<p class="buttons">
+        <a href="@routes.Application.index">Back to the form</a>
+    </p>
+    
+}

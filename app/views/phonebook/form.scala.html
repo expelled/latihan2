@@ -1,0 +1,47 @@
+@(phonebookForm: Form[Contact])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@title = {
+    Phonebook 
+}
+
+@main(title, nav = "phonebook") {
+    
+    @helper.form(action=routes.Phonebooks.submit, 'id -> "form") {
+        
+        <fieldset>
+            <legend>Phone book information</legend>
+            
+            @inputText(
+                phonebookForm("name"), 
+                '_label -> "Name", 
+                '_help -> "Enter a valid name.",
+                '_error -> phonebookForm.globalError
+            )
+            
+            @inputText(
+                phonebookForm("telepon"), '_label -> "Telepon",
+                '_help -> "Enter a valid number address."
+            )
+			@inputText(
+                phonebookForm("email"), '_label -> "Email",
+                '_help -> "Enter a valid email address."
+            )
+			@inputText(
+                phonebookForm("address"), '_label -> "Address",
+                '_help -> "Enter a valid address."
+            )
+            
+        </fieldset>
+                
+        
+        <div class="actions">
+            <input type="submit" class="btn primary" value="Entry">
+            <a href="@routes.Application.index" class="btn">Cancel</a>
+        </div>
+        
+    }
+    
+}
